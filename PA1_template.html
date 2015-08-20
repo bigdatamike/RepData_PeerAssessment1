@@ -55,8 +55,14 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </div>
 
 
-<div id="reading-the-activity-monitoring-data-into-r." class="section level3">
-<h3>Reading the activity monitoring data into R.</h3>
+<p>Personal movement using activity monitoring devices such as a Fitbit, Nike Fuelband, or Jawbone Up, collect a large amount of data about personal activity. The device used in this analysis collects data at 5 minute intervals throughout the day. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day. Data</p>
+<p>The variables included in this dataset are:</p>
+<pre><code>steps: Number of steps taking in a 5-minute interval (missing values are coded as NA)
+
+date: The date on which the measurement was taken in YYYY-MM-DD format
+
+interval: Identifier for the 5-minute interval in which measurement was taken</code></pre>
+<p>The dataset is stored in a comma-separated-value (CSV) file and there are a total of 17,568 observations in this dataset.</p>
 <pre class="r"><code>repdata &lt;- read.csv(&quot;activity.csv&quot;, header=T)
 dim(repdata)</code></pre>
 <pre><code>## [1] 17568     3</code></pre>
@@ -77,7 +83,6 @@ dim(repdata)</code></pre>
 ##  3rd Qu.: 12.00   2012-10-05:  288   3rd Qu.:1766.2  
 ##  Max.   :806.00   2012-10-06:  288   Max.   :2355.0  
 ##  NA's   :2304     (Other)   :15840</code></pre>
-</div>
 <div id="data-transformation" class="section level3">
 <h3>Data transformation</h3>
 <p>The following code creates and transforms the data by removing NA from the data, and creating a dataframe that consists of the sum of the steps taken for each day.</p>
